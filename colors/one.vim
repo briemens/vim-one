@@ -230,7 +230,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   fun <sid>X(group, fg, bg, attr)
     let l:attr = a:attr
     if g:one_allow_italics == 0 && l:attr ==? 'italic'
-        let l:attr= 'none'
+      let l:attr= 'none'
     endif
 
     let l:bg = ""
@@ -278,7 +278,8 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
     let s:hue_6   = 'd19a66' " orange 1
     let s:hue_6_2 = 'e5c07b' " orange 2
 
-    let s:syntax_bg     = '282c34'
+    " let s:syntax_bg     = '282c34'
+    let s:syntax_bg     = '31343f'
     let s:syntax_gutter = '636d83'
     let s:syntax_cursor = '2c323c'
 
@@ -335,7 +336,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('Directory',    s:hue_2,         '',               '')
   call <sid>X('ErrorMsg',     s:hue_5,         s:syntax_bg,      'none')
   call <sid>X('VertSplit',    s:vertsplit,     '',               'none')
-  call <sid>X('Folded',       s:mono_2,     s:syntax_fold_bg, 'italic')
+  call <sid>X('Folded',       s:mono_2,     'none', 'italic')
   call <sid>X('FoldColumn',   s:mono_3,        s:syntax_cursor,  '')
   call <sid>X('IncSearch',    s:hue_6,         '',               '')
   call <sid>X('LineNr',       s:mono_4,        '',               '')
@@ -383,7 +384,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('Number',         s:hue_6,         '',          '')
   call <sid>X('Boolean',        s:hue_6,         '',          '')
   call <sid>X('Float',          s:hue_6,         '',          '')
-  call <sid>X('Identifier',     s:hue_5,         '',          '')
+  call <sid>X('Identifier',     s:hue_6,         '',          '')
   call <sid>X('Function',       s:hue_2,         '',          '')
   call <sid>X('Statement',      s:hue_2,         '',          'none')
   call <sid>X('Conditional',    s:hue_3,         '',          '')
@@ -397,7 +398,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('Define',         s:hue_3,         '',          'none')
   call <sid>X('Macro',          s:hue_3,         '',          '')
   call <sid>X('PreCondit',      s:hue_6_2,       '',          '')
-  call <sid>X('Type',           s:hue_6_2,       '',          'none')
+  call <sid>X('Type',           s:hue_4,       '',          'none')
   call <sid>X('StorageClass',   s:hue_6_2,       '',          '')
   call <sid>X('Structure',      s:hue_6_2,       '',          '')
   call <sid>X('Typedef',        s:hue_6_2,       '',          '')
@@ -486,7 +487,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('cssInclude',           s:mono_1, '', '')
   call <sid>X('cssIncludeKeyword',    s:hue_3,  '', '')
   call <sid>X('cssMediaType',         s:hue_6,  '', '')
-  call <sid>X('cssProp',              s:hue_1,  '', '')
+  call <sid>X('cssProp',              s:hue_2,  '', '')
   call <sid>X('cssPseudoClassId',     s:hue_6,  '', '')
   call <sid>X('cssSelectorOp',        s:hue_3,  '', '')
   call <sid>X('cssSelectorOp2',       s:hue_3,  '', '')
@@ -495,12 +496,22 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('cssTagName',           s:hue_5,  '', '')
   call <sid>X('cssAttr',              s:hue_6,  '', '')
 
+   call <sid>X('cssUnitDecorators',           s:mono_1, '', '')
+   call <sid>X('cssAttr',           s:mono_1, '', '')
+   call <sid>X('cssFontAttr',           s:mono_1, '', '')
+   call <sid>X('cssValueInteger',           s:mono_1, '', '')
+   call <sid>X('cssValueNumber',           s:mono_1, '', '')
+   call <sid>X('cssValueLength',           s:mono_1, '', '')
+   call <sid>X('cssValueAngle',           s:mono_1, '', '')
+   call <sid>X('cssValueTime',           s:mono_1, '', '')
+   call <sid>X('cssValueFrequency',           s:mono_1, '', '')
+
   call <sid>X('sassAmpersand',      s:hue_5,   '', '')
   call <sid>X('sassClass',          s:hue_6_2, '', '')
   call <sid>X('sassControl',        s:hue_3,   '', '')
   call <sid>X('sassExtend',         s:hue_3,   '', '')
   call <sid>X('sassFor',            s:mono_1,  '', '')
-  call <sid>X('sassProperty',       s:hue_1,   '', '')
+  call <sid>X('sassProperty',       s:hue_2,   '', '')
   call <sid>X('sassFunction',       s:hue_1,   '', '')
   call <sid>X('sassId',             s:hue_2,   '', '')
   call <sid>X('sassInclude',        s:hue_3,   '', '')
@@ -509,6 +520,8 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('sassMixin',          s:hue_3,   '', '')
   call <sid>X('sassMixinName',      s:hue_2,   '', '')
   call <sid>X('sassMixing',         s:hue_3,   '', '')
+  call <sid>X('sasssVariable',      s:hue_5,   '', '')
+  call <sid>X('scssVariable',       s:hue_5,   '', '')
 
   call <sid>X('scssSelectorName',   s:hue_6_2, '', '')
   " }}}
@@ -751,6 +764,12 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('vimSep',          s:mono_2, '', '')
   call <sid>X('vimUserFunc',     s:hue_1,  '', '')
   call <sid>X('vimVar',          s:hue_5,  '', '')
+  call <sid>X('vimGroup',        s:hue_5,  '', '')
+  call <sid>X('vimHLGroup',      s:hue_5,  '', '')
+  call <sid>X('nvimHLGroup',     s:hue_5,  '', '')
+  call <sid>X('vimAutoEvent',     s:hue_2,  '', '')
+  call <sid>X('nvimAutoEvent',     s:hue_2,  '', '')
+  
   " }}}
 
   " XML highlighting --------------------------------------------------------{{{
@@ -828,10 +847,14 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
 
 endif
 "}}}
-  " Public API --------------------------------------------------------------{{{
-  function! one#highlight(group, fg, bg, attr)
-    call <sid>X(a:group, a:fg, a:bg, a:attr)
-  endfunction
-  "}}}
+" Public API --------------------------------------------------------------{{{
+function! one#highlight(group, fg, bg, attr)
+  call <sid>X(a:group, a:fg, a:bg, a:attr)
+endfunction
+"}}}
 
 " vim: set fdl=0 fdm=marker:
+hi Identifier ctermfg=168 guifg=#e06c75
+hi makeIdent ctermfg=168 guifg=#e06c75
+hi Statement ctermfg=176 guifg=#c678dd
+hi Type ctermfg=114 guifg=#98c379
