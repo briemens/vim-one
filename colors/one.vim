@@ -261,7 +261,9 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
 
 
   " Color definition --------------------------------------------------------{{{
+  let s:dark = 0
   if &background ==# 'dark'
+    let s:dark = 1
     let s:mono_1 = 'abb2bf'
     let s:mono_2 = '828997'
     let s:mono_3 = '5c6370'
@@ -903,6 +905,10 @@ function! one#highlight(group, fg, bg, attr)
   call <sid>X(a:group, a:fg, a:bg, a:attr)
 endfunction
 "}}}
+
+if s:dark
+  set background=dark
+endif
 
 " vim: set fdl=0 fdm=marker:
 hi Identifier ctermfg=168 guifg=#e06c75
