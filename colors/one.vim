@@ -675,6 +675,57 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('markdownListMarker',       s:hue_5,   '', '')
   " }}}
 
+" Clojure Higlighting
+
+highlight link clojureConstant                  Constant
+highlight link clojureBoolean                   Boolean
+highlight link clojureCharacter                 Character
+highlight link clojureKeyword                   Keyword
+highlight link clojureNumber                    Number
+highlight link clojureString                    String
+highlight link clojureStringDelimiter           String
+highlight link clojureStringEscape              Character
+
+highlight link clojureRegexp                    Constant
+highlight link clojureRegexpEscape              Character
+highlight link clojureRegexpCharClass           SpecialChar
+highlight link clojureRegexpPosixCharClass      clojureRegexpCharClass
+highlight link clojureRegexpJavaCharClass       clojureRegexpCharClass
+highlight link clojureRegexpUnicodeCharClass    clojureRegexpCharClass
+highlight link clojureRegexpPredefinedCharClass clojureRegexpCharClass
+highlight link clojureRegexpBoundary            SpecialChar
+highlight link clojureRegexpQuantifier          SpecialChar
+highlight link clojureRegexpMod                 SpecialChar
+highlight link clojureRegexpOr                  SpecialChar
+highlight link clojureRegexpBackRef             SpecialChar
+highlight link clojureRegexpGroup               clojureRegexp
+highlight link clojureRegexpQuoted              clojureString
+highlight link clojureRegexpQuote               clojureRegexpBoundary
+
+highlight link clojureVariable                  Identifier
+highlight link clojureCond                      Conditional
+highlight link clojureDefine                    Define
+highlight link clojureException                 Exception
+highlight link clojureFunc                      Function
+highlight link clojureMacro                     Macro
+highlight link clojureRepeat                    Repeat
+
+highlight link clojureSpecial                   Special
+highlight link clojureVarArg                    Special
+highlight link clojureQuote                     SpecialChar
+highlight link clojureUnquote                   SpecialChar
+highlight link clojureMeta                      SpecialChar
+highlight link clojureDeref                     SpecialChar
+highlight link clojureAnonArg                   SpecialChar
+highlight link clojureDispatch                  SpecialChar
+
+highlight link clojureComment                   Comment
+highlight link clojureCommentTodo               Todo
+
+highlight link clojureError                     Error
+
+highlight link clojureParen                     Delimiter
+
   " PHP highlighting --------------------------------------------------------{{{
   call <sid>X('phpClass',        s:hue_6_2, '', '')
   call <sid>X('phpFunction',     s:hue_2,   '', '')
