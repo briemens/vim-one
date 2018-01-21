@@ -336,7 +336,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('Directory',    s:hue_2,         '',               '')
   call <sid>X('ErrorMsg',     s:hue_5,         s:syntax_bg,      'none')
   call <sid>X('VertSplit',    s:vertsplit,     '',               'none')
-  call <sid>X('Folded',       s:mono_2,     'none', 'italic')
+  call <sid>X('Folded',       s:mono_2,        'none', 'italic')
   call <sid>X('FoldColumn',   s:mono_3,        s:syntax_cursor,  '')
   call <sid>X('IncSearch',    s:hue_6,         '',               '')
   call <sid>X('LineNr',       s:mono_4,        '',               '')
@@ -909,3 +909,8 @@ hi Identifier ctermfg=168 guifg=#e06c75
 hi makeIdent ctermfg=168 guifg=#e06c75
 hi Statement ctermfg=176 guifg=#c678dd
 hi Type ctermfg=114 guifg=#98c379
+hi clear Folded
+hi Folded guifg=#828997
+hi clear Comment
+hi Comment guifg=#5c6370
+
