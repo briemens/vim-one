@@ -591,6 +591,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   "}}}
 
 
+  
   " HTML highlighting -------------------------------------------------------{{{
   call <sid>X('htmlArg',            s:hue_6,  '', '')
   call <sid>X('htmlTagName',        s:hue_5,  '', '')
@@ -601,7 +602,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
 
   call <sid>X('MatchTag',   s:hue_5,         s:syntax_cursor,  'underline,bold')
   " }}}
-  "
+
 
   " JavaScript highlighting -------------------------------------------------{{{
   call <sid>X('coffeeString',           s:hue_4,   '', '')
@@ -914,7 +915,6 @@ highlight link clojureParen                     Delimiter
   "}}}
 
 endif
-
 "}}}
 " Public API --------------------------------------------------------------{{{
 function! one#highlight(group, fg, bg, attr)
