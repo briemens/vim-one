@@ -895,6 +895,10 @@ highlight link clojureParen                     Delimiter
   let g:terminal_color_7  = "#e3e5e9"
   let g:terminal_color_15 = "#e3e5e9"
   "}}}
+  
+  " Neovim NERDTree Background fix ------------------------------------------{{{
+  call <sid>X('NERDTreeFile', s:syntax_fg, '', '')
+  " }}}
 
   " ALE (Asynchronous Lint Engine) highlighting -----------------------------{{{
   call <sid>X('ALEWarningSign', s:hue_6_2, '', '')
