@@ -359,6 +359,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
 
   " Vim editor color --------------------------------------------------------{{{
   call <sid>X('Normal',       s:syntax_fg,     s:syntax_bg,      '')
+  call <sid>X('EndOfBuffer',  s:syntax_bg,     s:syntax_bg,      '')
   call <sid>X('bold',         '',              '',               'bold')
   call <sid>X('ColorColumn',  '',              s:syntax_cursor,  '')
   call <sid>X('Conceal',      s:mono_4,        s:syntax_bg,      '')
@@ -369,7 +370,8 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('Directory',    s:hue_2,         '',               '')
   call <sid>X('ErrorMsg',     s:hue_5,         s:syntax_bg,      'none')
   call <sid>X('VertSplit',    s:vertsplit,     '',               'none')
-  call <sid>X('Folded',       s:mono_2,        'none', 'italic')
+  " call <sid>X('Folded',       s:mono_2,        'none', 'italic')
+  call <sid>X('Folded',       s:syntax_fg,     s:syntax_bg,               'none')
   call <sid>X('FoldColumn',   s:mono_3,        s:syntax_cursor,  '')
   call <sid>X('IncSearch',    s:hue_6,         '',               '')
   call <sid>X('LineNr',       s:mono_4,        '',               '')
