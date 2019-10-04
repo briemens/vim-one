@@ -18,6 +18,12 @@ if exists("*<SID>X")
   delf <SID>grey_number
 endif
 
+set background=dark
+let g:airline_theme='atomic'
+if exists('AirlineTheme')
+  AirlineTheme atomic
+endif
+
 hi clear
 syntax reset
 if exists('g:colors_name')
@@ -33,6 +39,7 @@ let s:italic = ''
 if g:one_allow_italics == 1
   let s:italic = 'italic'
 endif
+let s:italic = 'italic'
 
 if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   " functions
@@ -414,7 +421,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   " Standard syntax highlighting --------------------------------------------{{{
   call <sid>X('Comment',        s:mono_3,        '',          s:italic)
   call <sid>X('Constant',       s:hue_4,         '',          '')
-  call <sid>X('String',         s:hue_4,         '',          '')
+  call <sid>X('String',         s:hue_4,         '',          s:italic)
   call <sid>X('Character',      s:hue_4,         '',          '')
   call <sid>X('Number',         s:hue_6,         '',          '')
   call <sid>X('Boolean',        s:hue_6,         '',          '')
@@ -624,7 +631,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   "}}}
 
   " HTML highlighting -------------------------------------------------------{{{
-  call <sid>X('htmlArg',            s:hue_6,  '', '')
+  call <sid>X('htmlArg',            s:hue_6,  '', s:italic)
   call <sid>X('htmlTagName',        s:hue_5,  '', '')
   call <sid>X('htmlTagN',           s:hue_5,  '', '')
   call <sid>X('htmlSpecialTagName', s:hue_5,  '', '')
@@ -663,7 +670,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('JavaScriptParens',               s:mono_2,  '', '')
   call <sid>X('JavaScriptStorageClass',         s:hue_3,   '', '')
   call <sid>X('JavaScriptTemplateBraces',       s:hue_5_2, '', '')
-  call <sid>X('JavaScriptTemplateVar',          s:hue_4,   '', '')
+  call <sid>X('JavaScriptTemplateVar',          s:hue_2,   '', '')
   call <sid>X('JavaScriptThis',                 s:hue_5,   '', '')
   call <sid>X('JavaScriptUndefined',            s:hue_6,   '', '')
   call <sid>X('JavaScriptObjectValue',          s:hue_2,   '', '')
